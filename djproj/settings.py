@@ -21,7 +21,7 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'g*#m%ohk#f3$5sof44udwbg@me#y$vz&vl^i@kfk44qz@kht&@'
+SECRET_KEY = 'g*#m%ohksdfghjkjhgf#f3$5sof44udwbg@me#y$vz&vl^i@kfk44qz@kht&@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -51,8 +51,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 ROOT_URLCONF = 'djproj.urls'
 
 TEMPLATES = [
@@ -71,7 +73,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'djproj.wsgi.application'
+WSGI_APPLICATION = 'djproj.wsgi.app'
 
 
 # Database
